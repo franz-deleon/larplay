@@ -1,5 +1,6 @@
 <?php
 
+use Laravel\Redirect;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -34,7 +35,7 @@
 
 Route::get('/', function()
 {
-	return View::make('home.index');
+	return Redirect::to('slideshow/home/index');
 });
 
 /*

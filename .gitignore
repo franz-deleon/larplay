@@ -17,6 +17,7 @@ Thumbs.db
 .project
 .settings
 .tmproj
+.buildpath
 *.esproj
 nbproject
 
