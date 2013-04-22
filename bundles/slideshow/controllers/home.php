@@ -43,5 +43,13 @@ class Slideshow_Home_Controller extends Slideshow_Base_Controller
 	    return Redirect::to('slideshow/home/login');
 	}
 
+    public function action_setup()
+	{
+	    	if (Auth::guest()) {
+		    return Redirect::to('slideshow/home/login');
+	    }
+
+        return View::make('slideshow::home.setup');
+	}
 
 }

@@ -1,0 +1,13 @@
+body {
+  background: #838694;
+  font-family: arial, verdana;
+  vertical-align: middle; }
+
+.header {
+  width: 500px;
+  padding: 20px 10px; }
+
+.content {
+  width: 500px;
+  border: 5px solid #1E7FB0;
+  padding: 10px; }

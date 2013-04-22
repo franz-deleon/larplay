@@ -2,12 +2,6 @@
 
 class Slideshow_Base_Controller extends Controller
 {
-
-    public function test()
-    {
-        echo __CLASS__;
-    }
-
 	/**
 	 * Catch-all method for requests that can't be matched.
 	 *
