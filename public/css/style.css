@@ -1,13 +1,27 @@
+/* line 4, style.scss */
 body {
-  background: #838694;
+  background: #5e6775;
   font-family: arial, verdana;
-  vertical-align: middle; }
+  vertical-align: middle;
+}
 
+/* line 10, style.scss */
 .header {
   width: 500px;
-  padding: 20px 10px; }
+  padding: 20px 10px;
+}
 
+/* line 15, style.scss */
 .content {
   width: 500px;
-  border: 5px solid #1E7FB0;
-  padding: 10px; }
+  border: 5px solid #1e7fb0;
+  padding: 10px;
+}
+
+/* line 21, style.scss */
+#form_error {
+  padding: 3px 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  display: inline-block;
+}

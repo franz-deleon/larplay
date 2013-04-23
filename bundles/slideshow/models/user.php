@@ -2,6 +2,4 @@
 
 class User extends Eloquent {
 
-
-
 }

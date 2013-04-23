@@ -20,7 +20,7 @@ $(function() {
 		var pass = true;
 		$( ".album_order" ).each(function (i, el) {
 			if ($(el).val() == 0) {
-				$('#form_error').removeClass('hidden').html('one of the order field is blank');
+				$('#form_error').removeClass('hidden').html('one of the order fields is blank');
 				pass = false;
 			    return false;
 			}
@@ -38,20 +38,14 @@ $(function() {
 <div class="header container"><h1>Setup Slideshow Order</h1></div>
 
 <div class="container content ui-corner-all ui-widget-content">
-    {{ Form::open('/slideshow/home/setup', 'POST', array('id' => 'slideshow_order2')) }}
+    {{ Form::open('/slideshow/home/setup', 'POST', array('id' => 'slideshow_order')) }}
         <!-- check for login errors flash var -->
-
-        <span id="form_error" class="ui-state-error @if (!Session::has('login_errors')) hidden @endif">error</span>
-
+        <span id="form_error" class="ui-state-error ui-corner-all @if (!Session::has('login_errors')) hidden @endif">error</span>
         <!-- username field -->
-        <p>{{ Form::label('Kelly', 'Kelly Album') }}</p>
-        <p>{{ Form::select('albumid-0', array('', '1' => '1', '2' => '2', '3' => '3'), null, array('class' => 'album_order')) }}</p>
-
-        <p>{{ Form::label('Allison', 'Allison Album') }}</p>
-        <p>{{ Form::select('albumid-1', array('', '1' => '1', '2' => '2', '3' => '3'), null, array('class' => 'album_order')) }}</p>
-
-        <p>{{ Form::label('Allison', 'Allison Album') }}</p>
-        <p>{{ Form::select('albumid-2', array('', '1' => '1', '2' => '2', '3' => '3'), null, array('class' => 'album_order')) }}</p>
+        @foreach ($albums as $album)
+        <p>{{ Form::label($album->name, $album->name . ' Album') }}</p>
+        <p>{{ Form::select("album[$album->id]", array_merge(array(''), range(1, count($albums))), null, array('class' => 'album_order')) }}</p>
+        @endforeach
         <!-- submit button -->
         <p>{{ Form::input('button', 'Submit', 'submit', array('id' => 'submit')) }}</p>
     {{ Form::close() }}

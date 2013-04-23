@@ -1,5 +1,8 @@
+$bgcolor: #5E6775;
+$content-border: #1E7FB0;
+
 body {
-    background: #838694;
+    background: $bgcolor;
     font-family: arial, verdana;
     vertical-align: middle;
 }
@@ -9,8 +12,15 @@ body {
     padding: 20px 10px;
 }
 
-.content {
+.content {  
     width: 500px;
-    border: 5px solid #1E7FB0;
+    border: 5px solid $content-border;
     padding: 10px;    
 }
+
+#form_error {
+    padding: 3px 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    display: inline-block;
+} 
