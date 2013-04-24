@@ -9,7 +9,12 @@ class Slideshow_Home_Controller extends Slideshow_Base_Controller
 
     public function action_index()
     {
-        return View::make('slideshow::home.index');
+        $photos = DB::table('photos')->left_join('albums', 'photos.album_id', '=', 'albums.id')
+            ->order_by('albums.order', 'asc')
+            ->order_by('photos.order', 'asc')
+            ->get(array('albums.id', 'albums.name', 'photos.source'));
+
+        return View::make('slideshow::home.index', array('photos' => $photos));
     }
 
     public function action_login()
@@ -63,7 +68,7 @@ class Slideshow_Home_Controller extends Slideshow_Base_Controller
             return Album::order_by('order', 'asc')->get();
         }, 5);
 
-        return View::make('slideshow::home.setup', array('albums' => $albums));
+        return Redirect::to_action("slideshow::home.index");
     }
 
 }

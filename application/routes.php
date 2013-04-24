@@ -35,7 +35,7 @@ use Laravel\Redirect;
 
 Route::get('/', function()
 {
-	return Redirect::to('slideshow/home/index');
+	return Redirect::to_action('slideshow::home.login');
 });
 
 /*

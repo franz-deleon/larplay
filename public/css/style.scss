@@ -1,9 +1,9 @@
-$bgcolor: #5E6775;
+$bgcolor: #43454A;
 $content-border: #1E7FB0;
 
 body {
     background: $bgcolor;
-    font-family: arial, verdana;
+    font-family: 'Snippet', sans-serif;
     vertical-align: middle;
 }
 
@@ -23,4 +23,54 @@ body {
     margin-bottom: 5px;
     text-align: center;
     display: inline-block;
-} 
+}
+
+.slide, .slide_end {
+    position: absolute;
+    top: 250px;
+    height: 400px;
+    background: white;
+    
+    .wrapper {
+        top: 0px;
+        width: 1300px;
+        margin:0 auto;
+        text-align: center;
+        line-height: 400px;
+    
+        img {
+            position: relative;
+            padding: 0px 10px;
+            height: 300px;
+        }
+    }
+}
+
+ul.navigation {
+    position: fixed;
+    top: 10px;
+    left: 40%;
+    color: #fff;
+    font-size: 20px;
+    list-style-type: none;
+    
+    li {
+        display: inline;
+        padding: 10px;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom:  1px solid #fff;
+        &:hover {
+            cursor: pointer;
+            background: #eee;
+        }
+    }
+}
+
+#setup-btn {
+    display: hidden;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding:8px;
+}

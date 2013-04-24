@@ -1,7 +1,7 @@
 /* line 4, style.scss */
 body {
-  background: #5e6775;
-  font-family: arial, verdana;
+  background: #43454a;
+  font-family: 'Snippet', sans-serif;
   vertical-align: middle;
 }
 
@@ -24,4 +24,58 @@ body {
   margin-bottom: 5px;
   text-align: center;
   display: inline-block;
+}
+
+/* line 28, style.scss */
+.slide, .slide_end {
+  position: absolute;
+  top: 250px;
+  height: 400px;
+  background: white;
+}
+/* line 34, style.scss */
+.slide .wrapper, .slide_end .wrapper {
+  top: 0px;
+  width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 400px;
+}
+/* line 41, style.scss */
+.slide .wrapper img, .slide_end .wrapper img {
+  position: relative;
+  padding: 0px 10px;
+  height: 300px;
+}
+
+/* line 49, style.scss */
+ul.navigation {
+  position: fixed;
+  top: 10px;
+  left: 40%;
+  color: #fff;
+  font-size: 20px;
+  list-style-type: none;
+}
+/* line 57, style.scss */
+ul.navigation li {
+  display: inline;
+  padding: 10px;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+/* line 63, style.scss */
+ul.navigation li:hover {
+  cursor: pointer;
+  background: #eee;
+}
+
+/* line 70, style.scss */
+#setup-btn {
+  display: hidden;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 8px;
 }

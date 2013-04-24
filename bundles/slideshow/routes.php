@@ -10,9 +10,12 @@ Route::filter('auth', function () {
 });
 
 Route::group(array('before' => 'auth'), function() {
+    Route::get('(:bundle)', 'slideshow::home@index');
+    Route::get('(:bundle)/home', 'slideshow::home@index');
+    Route::get('(:bundle)/home/index', 'slideshow::home@index');
+
     Route::get('(:bundle)/home/setup', 'slideshow::home@setup');
     Route::post('(:bundle)/home/setup', 'slideshow::home@setup_post');
-    Route::get('(:bundle)/home', 'slideshow::home@index');
 });
 
 // custom routes
